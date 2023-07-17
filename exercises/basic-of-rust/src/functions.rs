@@ -1,9 +1,8 @@
 // Exercise 1
 // Fix all errors 
-fn sum(x: i32, y: i32) {
-    x + y;
+fn sum(x: i32, y: i32) -> i32 {
+    x + y
 }
-
 //Exercise 2
 // Input: Provide an arbitrary value of n
 // Implement sum function: 1+2+3+..n

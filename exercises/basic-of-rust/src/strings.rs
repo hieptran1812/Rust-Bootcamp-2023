@@ -18,7 +18,7 @@ fn exercise2() -> String {
 // Fix errors without removing any line
 fn exercise3() -> String {
     let s1 = String::from("hello,");
-    let s2 = String::from("world!");
+    let s2 = String::from(" world!");
     let s3 = s1 + &s2;
     s3
 }
@@ -33,13 +33,15 @@ fn reverse_string(input: &str) -> String {
 // Check if a string is a palindrome
 fn is_palindrome(word: &str) -> bool {
     let reversed = word.chars().rev().collect::<String>();
-    word == reversed
+    println!("{}", reversed);
+    word.to_lowercase() == reversed.to_lowercase()
 }
 
 // Exercise 6
 // Count the occurrences of a character in a string
 fn count_char_occurrences(string: &str, ch: char) -> usize {
-    string.chars().filter(|&c| c == ch).count()
+    let a = string.chars().filter(|&c| c == ch).count();
+    a
 }
 
 #[cfg(test)]
@@ -92,7 +94,7 @@ mod tests {
     #[test]
     fn test_count_char_occurrences() {
         assert_eq!(count_char_occurrences("Hello", 'l'), 2);
-        assert_eq!(count_char_occurrences("Rust is fun", 'u'), 1);
+        assert_eq!(count_char_occurrences("Rust is fun", 'u'), 2);
         assert_eq!(count_char_occurrences("Mississippi", 's'), 4);
     }
 
